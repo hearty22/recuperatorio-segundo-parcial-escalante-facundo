@@ -67,3 +67,18 @@ export const updateLanguage = async (req, res)=>{
         res.status(500).json({error:"error interno al actualizar el lenguaje"})
     }
 };
+//DEL
+export const delLanguage = async (req, res)=>{
+    try {
+        const language = await languageModel.findByPk(req.params.id)
+        if(!language){
+            return res.status(400).json({message:"el lenguaje que desea eliminar no existe"});
+        };
+
+        const { name } = language;
+        await language.destroy();
+        res.status(200).json({message:`lenguaje eliminado con exito: ${name}`})
+    } catch (error) {
+        res.status(500).json({error:"error al eliminar el lenguaje"})
+    }
+}
