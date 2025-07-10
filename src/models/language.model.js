@@ -1,5 +1,5 @@
-import { sequelize } from "../config/database.js";
-import { DataTypes } from "sequelize";
+import { sequelize } from "../config/database.js"; //trae la configuracion de la abse de datos
+import { DataTypes } from "sequelize"; //necesario para definir los tipos de datos de los atributos
 
 
 
@@ -31,4 +31,4 @@ export const languageModel =  sequelize.define("ProgrammingLanguage",
         createdAt:false,
         updatedAt:false
     }
-)
+);//se define el modelo de la base de datos
