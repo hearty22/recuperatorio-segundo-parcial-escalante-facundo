@@ -1,6 +1,8 @@
 
 import { configDotenv } from "dotenv";
 import express from  "express"
+import { languageModel } from "./src/models/language.model.js";
+import { db } from "./src/config/db.js";
 
 configDotenv();
 
@@ -10,7 +12,7 @@ const app = express();
 app.use(express.json());7
 
 app.get("/",(res,req)=>{
-    console.log("esto todavia no tiene nada")
+    res.send(languageModel, db)
 });
 
 app.listen(PORT,()=>{
