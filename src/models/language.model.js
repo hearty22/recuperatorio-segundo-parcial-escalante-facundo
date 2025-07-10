@@ -16,19 +16,19 @@ export const languageModel =  sequelize.define("ProgrammingLanguage",
             allowNull:false,
             unique:true
         },
-        paradign:{
+        paradigm:{
             type:DataTypes.STRING,
             allowNull:false
         },
         release_year:{
 
             type: DataTypes.INTEGER,
-            allowNull:false
+            allowNull:true
 
         }
 
     },{
         createdAt:false,
-        updatedAt:true
+        updatedAt:false
     }
 )
